@@ -22,3 +22,12 @@ angular.module('mytube').controller('homeController', function($scope, tubeServi
 
 
 });
+
+
+angular.module('mytube').controller('displayController', function($scope, $state, $stateParams, $sce){
+  $scope.vidID = $stateParams.id;
+  $scope.tmpVid = "https://www.youtube.com/embed/" + $scope.vidID;
+  $scope.myVideo = $sce.trustAsResourceUrl($scope.tmpVid);
+
+
+});
